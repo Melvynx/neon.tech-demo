@@ -1,13 +1,21 @@
-'use client';
+"use client";
 
-import { Toaster } from '@/components/ui/sonner';
-import { PropsWithChildren } from 'react';
+import { Toaster } from "@/components/ui/sonner";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { SessionProvider } from "next-auth/react";
+import { PropsWithChildren } from "react";
+
+const queryClient = new QueryClient();
 
 export const Providers = (props: PropsWithChildren) => {
   return (
     <>
-      <Toaster closeButton position="top-right" />
-      {props.children}
+      <SessionProvider>
+        <QueryClientProvider client={queryClient}>
+          <Toaster closeButton position="top-right" />
+          {props.children}
+        </QueryClientProvider>
+      </SessionProvider>
     </>
   );
 };

@@ -72,6 +72,12 @@ model User {
   sessions  Session[]
   accounts  Account[]
   feedbacks Feedback[]
+  todos     Todo[]
+}
+
+enum UserPlan {
+  FREE // free
+  MASTER // pay
 }
 
 model Feedback {
@@ -86,7 +92,12 @@ model Feedback {
   updatedAt DateTime @updatedAt
 }
 
-enum UserPlan {
-  FREE
-  PREMIUM
+model Todo {
+  id        String   @id @default(cuid())
+  title     String
+  completed Boolean  @default(false)
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

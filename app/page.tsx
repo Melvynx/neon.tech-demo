@@ -1,3 +1,11 @@
+import { BuyButton } from "./buy/BuyButton";
+import { AccountSettingsButton } from "./buy/UserSettings";
+
 export default function Home() {
-  return <div></div>;
+  return (
+    <div>
+      <BuyButton />
+      <AccountSettingsButton />
+    </div>
+  );
 }
