@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="dark h-full">
       <body
         className={cn(
           inter.className,
@@ -32,7 +32,7 @@ export default function RootLayout({
         <div className="m-auto h-full max-w-5xl px-4">
           <Providers>
             <Header />
-            {children}
+            <div className="my-4 flex-1">{children}</div>
           </Providers>
         </div>
       </body>

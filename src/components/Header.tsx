@@ -8,7 +8,7 @@ export const Header = async (props: HeaderProps) => {
 
   return (
     <header className="flex w-full items-center gap-4 border-b py-2">
-      <h3 className="text-2xl">Demo app</h3>
+      <h3 className="text-2xl">App</h3>
       <div className="ml-auto flex items-center gap-4">
         <p>{session?.user?.email ?? "Not authentificated"}</p>
         {session?.user ? <LogoutButton /> : <LoginButton />}
