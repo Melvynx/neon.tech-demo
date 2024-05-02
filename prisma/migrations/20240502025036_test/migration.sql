@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Todo" ADD COLUMN     "testField" INTEGER NOT NULL DEFAULT 0;
